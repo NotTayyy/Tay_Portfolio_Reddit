@@ -4,8 +4,6 @@ import Link from "next/link";
 import { ArrowTrendingUpIcon, ChevronDownIcon, EllipsisHorizontalIcon, QueueListIcon, StarIcon } from "@heroicons/react/24/outline";
 import Reddit_Info from "./Reddit_Info";
 
-
-
 function Main_Body() {
   return (
     <div className="p-5 w-full flex justify-center">

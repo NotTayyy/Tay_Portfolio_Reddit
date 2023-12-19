@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import Avatar from '../public/Images/Avatar.png'
 
-
 function Create_Post() {
   return (
     <div className="px-2 w-full bg-reddit-Grey max-w-screen-sm flex rounded-md items-center mb-4" style={{border: '1px solid #343536'}}>

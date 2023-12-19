@@ -13,7 +13,7 @@ export default function RootLayout({
   children,
 }: {children: React.ReactNode}) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-reddit-Dark mx-auto h-screen w-screen text-white">
       <body className={inter.className}>
         {children}
       </body>
