@@ -1,5 +1,6 @@
 import { FireIcon } from "@heroicons/react/24/solid";
 import Create_Post from "./Create_Post";
+imort Reddit_Posts from "./Reddit_Posts"
 import Link from "next/link";
 import { ArrowTrendingUpIcon, ChevronDownIcon, EllipsisHorizontalIcon, QueueListIcon, StarIcon } from "@heroicons/react/24/outline";
 import Reddit_Info from "./Reddit_Info";
@@ -19,6 +20,8 @@ function Main_Body() {
             <Link href='#' className="flex items-center mr-2"><QueueListIcon className="icons m-1 text-gray-500" /><ChevronDownIcon className=" text-gray-400 h-3 w-3 my-1" /></Link>
           </div>
         </div>
+        <Reddit_Posts />
+
         
         <Reddit_Info />
       </div>  

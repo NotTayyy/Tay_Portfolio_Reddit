@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Logo from '../public/Images/red_icon.png';
-import Avatar from '../public/Images/Avatar.png'
+import Avatar from '../public/Images/Avatar.png';
 import { BellIcon, ChatBubbleOvalLeftEllipsisIcon, ChevronDownIcon, MagnifyingGlassIcon, MegaphoneIcon, PlusIcon, ShieldExclamationIcon, XCircleIcon} from '@heroicons/react/24/outline';
 import Link from "next/link";
-
-var Redd_Logo = 'https://styles.redditmedia.com/t5_3lasp/styles/communityIcon_w7mmx3nnpjj91.png'
+import Red_Logo from '../public/Images/Red_Logo.webp'
 
 function Header() {
   return (
@@ -14,14 +13,14 @@ function Header() {
           <span className="font-extrabold text-3xl">reddit</span>
         </div>
         <div className="items-center flex ml-2 mr-4">
-          <Image src={Redd_Logo} width={256} height={256} alt='Sub Reddit Logo' className="mr-3 icons rounded-full"></Image>
+          <Image src={Red_Logo} width={256} height={256} alt='Sub Reddit Logo' className="mr-3 icons rounded-full"></Image>
           <div className="pr-28 text-xs">r/thefinals</div>
           <ChevronDownIcon className="ml-1 text-gray-100 h-4 w-4 my-1" />
         </div>
         <form action='' className="bg-reddit-Dark_Grey flex px-3 rounded-full items-center border-2 border-gray-700 mx-3 flex-grow" id="Search">
           <button><MagnifyingGlassIcon className="text-gray-400 h-7 w-7 p-1"/></button>
           <div className="bg-black text-gray-200 mx-1 px-2 rounded-full items-center flex text-xs py-1">
-            <Image src={Redd_Logo} width={256} height={256} alt='Sub Reddit Logo' className=" h-4 w-4 mr-2 my-0 icons rounded-full">
+            <Image src={Red_Logo} width={256} height={256} alt='Sub Reddit Logo' className=" h-4 w-4 mr-2 my-0 icons rounded-full">
             </Image>r/thefinals
             <XCircleIcon className="h-4 w-4 m-0 ml-2 icons"></XCircleIcon>
           </div>
