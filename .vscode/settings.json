@@ -2,5 +2,6 @@
   "cSpell.words": [
     "heroicons",
     "thefinals"
-  ]
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
