@@ -19,7 +19,7 @@ function Header() {
         </div>
         <form action='' className="bg-reddit-Dark_Grey flex px-3 rounded-full items-center border-2 border-gray-700 mx-3 flex-grow" id="Search">
           <button><MagnifyingGlassIcon className="text-gray-400 h-7 w-7 p-1"/></button>
-          <div className="bg-black text-gray-200 mx-1 px-2 rounded-full items-center flex text-xs py-1">
+          <div className="bg-black text-gray-300 mx-1 px-2 rounded-full items-center flex text-xs py-1">
             <Image src={Red_Logo} width={256} height={256} alt='Sub Reddit Logo' className=" h-4 w-4 mr-2 my-0 icons rounded-full">
             </Image>r/thefinals
             <XCircleIcon className="h-4 w-4 m-0 ml-2 icons"></XCircleIcon>
