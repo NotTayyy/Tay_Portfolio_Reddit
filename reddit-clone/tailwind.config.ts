@@ -13,7 +13,9 @@ const config: Config = {
           Dark: '#030303',
           Grey: '#1A1A1B',
           Grey_tint: '#141414',
-          Dark_Grey: '#272729'
+          Dark_Grey: '#272729',
+          hover: '#acaeb0',
+          Dark_Tint: '#818384'
         },
         reddit_Border: {
           DEFAULT: '#343536'

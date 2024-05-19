@@ -7,7 +7,7 @@ import Red_Logo from '../public/Images/Red_Logo.webp'
 
 function Header() {
   return (
-    <header className="flex w-full bg-reddit-Grey items-center">
+    <header className="flex w-full bg-reddit-Grey items-center over">
         <div className="mx-4 items-center flex">
           <Link href="#"><Image src={Logo} className="icons w-8 h-8 mr-2" alt="Reddit_Logo"/></Link>
           <span className="font-extrabold text-3xl">reddit</span>

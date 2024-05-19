@@ -11,7 +11,7 @@ import Main_Body from "@/Components/Main_Body"
 
 export default function Home() {
   return (
-    <div className="bg-reddit-Dark mx-auto h-screen w-screen text-white">
+    <div className="bg-reddit-Dark mx-auto h-screen text-white m-0 p-0">
       <Header />
       <Reddit_Hero />
       <Main_Body />
