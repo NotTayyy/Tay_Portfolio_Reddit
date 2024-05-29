@@ -1,5 +1,5 @@
 'use client'
-import Input from '@/Components/Tools/Input'
+import Input from '@/src/components/Tools/Input'
 import BigButton from '../Tools/BigButton';
 import { useState} from 'react';
 import axios from 'axios';

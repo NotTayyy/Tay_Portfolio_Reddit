@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import Reddit_Posts_Empty from '../Components/Reddit_Posts_Empty';
+import Reddit_Posts_Empty from './Reddit_Posts_Empty';
 
 const posts = [
   {

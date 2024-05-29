@@ -1,7 +1,7 @@
 
-import Header from "@/Components/Header";
-import Reddit_Hero from "@/Components/Reddit_Hero";
-import Main_Body from "@/Components/Main_Body"
+import Header from "@/src/components/Header";
+import Reddit_Hero from "@/src/components/Reddit_Hero";
+import Main_Body from "@/src/components/Main_Body"
 
 export default function Home() {
   return (
