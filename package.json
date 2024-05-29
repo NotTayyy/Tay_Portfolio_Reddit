@@ -1,7 +1,7 @@
 {
   "homepage": "https://nottayyy.github.io/Tay_Portfolio_Reddit/",
   "name": "reddit-clone",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
