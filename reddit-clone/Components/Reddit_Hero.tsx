@@ -18,7 +18,7 @@ function Reddit_Hero() {
             <h1 className="text-reddit-Dark_Tint text-sm pt-1" >r/thefinals</h1>
           </div>
           <div >
-            <button className="border-2 rounded-full my-3 py-1 px-8 text-zinc-800 bg-white mr-2 font-bold" style={{border: '1px solid white'}}>Join</button>
+            <button className="rounded-full my-3 py-1 px-8 text-zinc-800 bg-gray-200 hover:bg-gray-300 mr-2 font-bold" >Join</button>
           </div>
           <div>
             <Link href='#'><BellIcon className="h-8 w-8 rounded-full my-3 text-white" style={{border: '1px solid white'}} /></Link>

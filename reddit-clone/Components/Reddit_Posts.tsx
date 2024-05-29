@@ -19,7 +19,7 @@ const posts = [
   },
   {
     userName: 'Daxstix',
-    postTitle: 'How do I find small green children with Fat Asses',
+    postTitle: 'How do I find small green men with Fat Asses',
     postContent: 'Hi so ive been looking into these things called "Goblins" and they seem pretty neat! So I Was trying to find em and hopefully they have fat asses'
   },
   {
