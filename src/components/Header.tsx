@@ -7,6 +7,7 @@ import BigButton from "./Tools/BigButton";
 import UserHeroMenu from './Dropdowns/UserHeroMenu';
 import SubDirectories from './Dropdowns/SubDirectories';
 import AuthModal from "./modals/AuthModal";
+import LoginSignUp from "./Utilities/LoginSignUp";
 
 function Header() {
 
@@ -27,17 +28,7 @@ function Header() {
           </div>
           <input type="text" className="bg-inherit px-2 py-1 focus:outline-none flex-grow" placeholder="Search Reddit"></input>
       </form>
-      <div className="mx-1 flex-row hidden xl:flex">
-      {/*Show after Logged In*/}
-      {/* <Link href="#" className="ico_btn"> <ShieldExclamationIcon className="icons"/> </Link>
-      <Link href="#" className="ico_btn"> <ChatBubbleOvalLeftEllipsisIcon className="icons"/> </Link>
-      <Link href="#" className="ico_btn"> <BellIcon className="icons"/> </Link>
-      <Link href="#" className="ico_btn"> <PlusIcon className="icons" />  </Link>
-      <Link href="#" className="ico_btn p-0 pr-3 pl-1 flex items-center bg-reddit-Dark_Grey rounded-full mr-4"> <MegaphoneIcon className="icons h-5 w-5 mx-1"/><h1 className="text-sm">Advertise</h1> </Link> */}
-
-        <BigButton inverted='true'>Log In</BigButton>
-        <BigButton>Sign Up</BigButton>
-      </div>
+        <LoginSignUp />
         <UserHeroMenu />
     </header>
   );

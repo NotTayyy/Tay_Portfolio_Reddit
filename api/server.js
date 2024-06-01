@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import User from "./models/Users.js";
 import jwt from 'jsonwebtoken';
+import 'dotenv/config';
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -15,14 +16,26 @@ app.use(cors({
   credentials: true,
 }))
 
-const secret = 'secret123'
-const uri = 'mongodb+srv://NotTayyy:Nickson152431`~@reddit.anpsf3h.mongodb.net/?retryWrites=true&w=majority&appName=reddit'
+const secret = 'secret123';
+const uri = process.env.MONGOPASS;
 await mongoose.connect(uri);
 const db = mongoose.connection;
-db.on('error', console.log)
+db.on('error', console.log);
 
 app.get('/', (req, res) => {
   res.send('ok');
+})
+
+const posts = [
+  {
+    userName: 'Admin_01',
+    postTitle: "The admins don't know what they are Doing!!!",
+    postContent: `Lorem ips`
+  }
+]
+
+app.get('/posts', (req, res) => {
+  res.posts()
 })
 
 app.post('/register', (req, res) => {

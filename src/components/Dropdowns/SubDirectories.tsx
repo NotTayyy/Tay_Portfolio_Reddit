@@ -3,6 +3,7 @@ import {ChevronDownIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { useState } from "react";
 import { ClickOutHandler } from "react-clickout-ts";
+import OutsideClickHandler from "react-outside-click-handler";
 
 function SubDirectories({Red_Logo}:any) {
 
@@ -17,7 +18,7 @@ function SubDirectories({Red_Logo}:any) {
   }
 
   return (
-    <ClickOutHandler onClickOut={() => setSubRedditDrop('hidden')}>
+    <OutsideClickHandler onOutsideClick={() => setSubRedditDrop('hidden')}>
       <span className="hidden lg:block">
         <button onClick={() => toggleSubDrop()} className="items-center flex mx-0 px-1 border-1 border-reddit-Grey hover:border-reddit_Border rounded-lg">
           <Image src={Red_Logo} width={256} height={256} alt='Sub Reddit Logo' className="mr-3 icons rounded-full"></Image>
@@ -30,7 +31,7 @@ function SubDirectories({Red_Logo}:any) {
           </button>
         </div>
       </span>
-    </ClickOutHandler>
+    </OutsideClickHandler>
   )
 }
 

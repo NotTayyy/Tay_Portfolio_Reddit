@@ -9,8 +9,6 @@ export default function Home() {
         <Header />
         <Reddit_Hero />
         <Main_Body />
-
-
     </div>
   )
 }

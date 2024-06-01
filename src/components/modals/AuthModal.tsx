@@ -3,18 +3,17 @@ import Input from '@/src/components/Tools/Input'
 import BigButton from '../Tools/BigButton';
 import { useState} from 'react';
 import axios from 'axios';
-import { ClickOutHandler } from 'react-clickout-ts';
+import { useAuthStore, useModalType } from '@/src/store';
+import OutsideClickHandler from 'react-outside-click-handler';
 
 
 function AuthModal() {
-  const [modalType, setModalType] = useState('login');
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const [modalVisibility, setModalVisibility] = useState('block');
-
-
+  const {authVisible, setAuthVisible} = useAuthStore();
+  const {modalType, setModalType} = useModalType();
 
   function register(e: any) {
     e.preventDefault();
@@ -22,9 +21,27 @@ function AuthModal() {
     axios.post('http://localhost:4000/register', data, {withCredentials:true})
   }
 
+  const clickOut = () => {
+    setAuthVisible('hidden');
+    setEmail('');
+    setUsername('');
+    setPassword('');
+  }
+
+  const clearAndSwitch = () => {
+    setEmail('');
+    setUsername('');
+    setPassword('');
+    if (modalType === 'login') {
+      setModalType('register');
+    } else {
+      setModalType('login')
+    }
+  }
+
   return(
-    <span className={`w-full h-full absolute top-0 left-0 z-20 bg-black bg-opacity-60 flex ${modalVisibility}`}>
-    <ClickOutHandler onClickOut={() => setModalVisibility('hidden')}>
+    <span className={`w-full h-full absolute top-0 left-0 z-20 bg-black bg-opacity-60 flex ${authVisible}`}>
+    <OutsideClickHandler display='contents' onOutsideClick={() => clickOut()}>
       <div className="border-reddit_Border border-1 w-1/3 bg-reddit-Dark p-12 text-gray-300 mx-auto flex self-center flex-col">
         {modalType === 'login' && (
           <h1 className='text-2xl mb-1'>LOGIN</h1>
@@ -55,20 +72,20 @@ function AuthModal() {
           <>
             <BigButton className='w-full rounded-md py-2 mb-2'>Log In</BigButton>
             <button className='text-blue-500 hover:underline hover:text-blue-700 mb-2'>Forgot password?</button>
-            <p>new to reddit? <button className='text-blue-500 hover:underline hover:text-blue-700' onClick={() => setModalType('register')}>Sign Up!</button></p>
+            <p>new to reddit? <button className='text-blue-500 hover:underline hover:text-blue-700' onClick={() => clearAndSwitch()}>Sign Up!</button></p>
           </>
           
         )}
         {modalType === 'register' && (
           <>
             <BigButton onClick={(e: any) => register(e)} className='w-full rounded-md py-2 mb-2'>Sign Up!</BigButton>
-            <p>already have an account? <button className='text-blue-500 hover:underline hover:text-blue-700' onClick={() => setModalType('login')}>Login!</button></p>
+            <p>already have an account? <button className='text-blue-500 hover:underline hover:text-blue-700' onClick={() => clearAndSwitch()}>Login!</button></p>
           </>
         )}
           
         </div>
       </div>
-    </ClickOutHandler>
+    </OutsideClickHandler>
     </span>
     
   )
