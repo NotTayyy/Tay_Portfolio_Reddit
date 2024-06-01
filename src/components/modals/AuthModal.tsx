@@ -6,7 +6,6 @@ import axios from 'axios';
 import { useAuthStore, useModalType } from '@/src/store';
 import OutsideClickHandler from 'react-outside-click-handler';
 
-
 function AuthModal() {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');

@@ -1,15 +1,25 @@
+'use client'
 import Image from "next/image";
 import Logo from '../public/Images/red_icon.png';
-import { ArrowLeftEndOnRectangleIcon, BellIcon, ChatBubbleOvalLeftEllipsisIcon, ChevronDownIcon, MagnifyingGlassIcon, MegaphoneIcon, PlusIcon, ShieldExclamationIcon, UserIcon, XCircleIcon, ChevronUpIcon} from '@heroicons/react/24/outline';
+import {MagnifyingGlassIcon, XCircleIcon} from '@heroicons/react/24/outline';
 import Link from "next/link";
 import Red_Logo from '../public/Images/Red_Logo.webp';
-import BigButton from "./Tools/BigButton";
 import UserHeroMenu from './Dropdowns/UserHeroMenu';
 import SubDirectories from './Dropdowns/SubDirectories';
 import AuthModal from "./modals/AuthModal";
 import LoginSignUp from "./Utilities/LoginSignUp";
+import axios from "axios";
+import { useEffect } from "react";
+import { useUsername } from "../store";
 
 function Header() {
+
+  useEffect(() => {
+    axios.get('http://localhost:4000/user', {withCredentials:true})
+      .then(res => setUsername(res.data));  
+  }, []);
+
+  const { username, setUsername } = useUsername();
 
   return (
     <header className="flex w-full bg-reddit-Grey items-center">

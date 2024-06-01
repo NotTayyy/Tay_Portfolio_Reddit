@@ -6,6 +6,7 @@ import cors from 'cors';
 import User from "./models/Users.js";
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
+import bcrypt from 'bcrypt';
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -24,22 +25,11 @@ db.on('error', console.log);
 
 app.get('/', (req, res) => {
   res.send('ok');
-})
-
-const posts = [
-  {
-    userName: 'Admin_01',
-    postTitle: "The admins don't know what they are Doing!!!",
-    postContent: `Lorem ips`
-  }
-]
-
-app.get('/posts', (req, res) => {
-  res.posts()
-})
+});
 
 app.post('/register', (req, res) => {
-  const {email, username, password} = req.body;
+  const {email, username} = req.body;
+  const password = bcrypt.hashSync(req.body.password, 10)
   const user = new User({email, username, password})
   user.save().then(user => {
     jwt.sign({id:user._id}, secret, (err, token) => {
@@ -55,5 +45,19 @@ app.post('/register', (req, res) => {
     res.sendStatus(500);
   });
 });
+
+app.get('/user', (req, res) => {
+  const token = req.cookies.token;
+  const userInfo = jwt.verify(token, secret);
+  User.findById(userInfo.id)
+    .then(user => {
+      res.json(user.username);
+  })
+    .catch(err => {
+      console.log(err)
+      res.sendStatus(500)
+  })
+})
+
 
 app.listen(4000)

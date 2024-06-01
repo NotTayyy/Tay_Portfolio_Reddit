@@ -7,6 +7,7 @@ function  Accordion({...props}:any) {
 
   return (
     <>
+    <hr className="bg-reddit_Border m-0 mx-2 border-0 h-0.5" />
     <div className={`m-1 p-1 ${props.textCol}`}>
       <button onClick={() => setAccOpen(!accOpen)} className="flex justify-between w-full">
         <span>{props.title}</span>
@@ -18,7 +19,6 @@ function  Accordion({...props}:any) {
         <div className="overflow-hidden p-1 pl-2 pb-0">{props.collapsed}</div>
       </div>
     </div>
-    <hr className="bg-reddit_Border m-0 mx-2 border-0 h-0.5" />
     </>
   )
 }

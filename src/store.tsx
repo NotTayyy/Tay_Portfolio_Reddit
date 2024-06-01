@@ -10,12 +10,24 @@ type ModalType = {
   setModalType: (authType: string) => void;
 }
 
+type UserInfo = {
+  username: string | null;
+  isLoggedIn: boolean;
+  setUsername: (username: string) => void;
+}
+
 export const useAuthStore = create<AuthStore>((set) => ({
-  authVisible: 'block',
+  authVisible: 'hidden',
   setAuthVisible: (authVisible: string) => set({authVisible})
 }));
 
 export const useModalType = create<ModalType>((set) => ({
   modalType: 'login',
   setModalType: (modalType: string) => set({modalType})
+}));
+
+export const useUsername = create<UserInfo>((set) => ({
+  username: null,
+  isLoggedIn: false,
+  setUsername: (username: string) => set({username})
 }));
