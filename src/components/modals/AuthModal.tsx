@@ -3,7 +3,7 @@ import Input from '@/src/components/Tools/Input'
 import BigButton from '../Tools/BigButton';
 import { useState} from 'react';
 import axios from 'axios';
-import { useAuthStore, useModalType } from '@/src/store';
+import { useAuthStore } from '@/src/store';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 function AuthModal() {
@@ -11,8 +11,7 @@ function AuthModal() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const {authVisible, setAuthVisible} = useAuthStore();
-  const {modalType, setModalType} = useModalType();
+  const {authVisible, setAuthVisible, modalType, setModalType} = useAuthStore();
 
   function register(e: any) {
     e.preventDefault();

@@ -1,11 +1,10 @@
 'use client'
 import BigButton from "../Tools/BigButton";
-import { useAuthStore, useModalType } from '@/src/store';
+import { useAuthStore} from '@/src/store';
 
 function LoginSignUp() {
   
-  const {setAuthVisible} = useAuthStore();
-  const {setModalType} = useModalType();
+  const {setAuthVisible, setModalType} = useAuthStore();
 
   const logBtn = () => {
     setModalType('login');

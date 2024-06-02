@@ -2,7 +2,6 @@
 import {ChevronDownIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { useState } from "react";
-import { ClickOutHandler } from "react-clickout-ts";
 import OutsideClickHandler from "react-outside-click-handler";
 
 function SubDirectories({Red_Logo}:any) {

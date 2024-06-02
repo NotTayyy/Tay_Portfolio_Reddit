@@ -1,14 +1,13 @@
 'use client'
 import { useState } from 'react';
 import { ArrowLeftEndOnRectangleIcon, ChevronDownIcon, ChevronUpIcon, UserIcon } from '@heroicons/react/24/outline';
-import { useAuthStore, useModalType } from '@/src/store';
+import { useAuthStore} from '@/src/store';
 import OutsideClickHandler from 'react-outside-click-handler';
 
 function UserHeroMenu() {
 
   const [userDropVis, setUserDropVis] = useState('hidden');
-  const {setAuthVisible} = useAuthStore();
-  const {setModalType} = useModalType();
+  const {setAuthVisible, setModalType} = useAuthStore();
 
   const toggleUserDrop = () => {
     if (userDropVis === 'hidden') {

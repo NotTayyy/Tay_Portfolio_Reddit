@@ -2,11 +2,8 @@ import { create } from "zustand";
 
 type AuthStore = {
   authVisible: string;
-  setAuthVisible: (authVisible: string) => void;
-}
-
-type ModalType = {
   modalType: string;
+  setAuthVisible: (authVisible: string) => void;
   setModalType: (authType: string) => void;
 }
 
@@ -18,11 +15,8 @@ type UserInfo = {
 
 export const useAuthStore = create<AuthStore>((set) => ({
   authVisible: 'hidden',
-  setAuthVisible: (authVisible: string) => set({authVisible})
-}));
-
-export const useModalType = create<ModalType>((set) => ({
   modalType: 'login',
+  setAuthVisible: (authVisible: string) => set({authVisible}),
   setModalType: (modalType: string) => set({modalType})
 }));
 
